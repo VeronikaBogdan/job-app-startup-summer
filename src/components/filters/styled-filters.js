@@ -39,13 +39,13 @@ export const useStyles = createStyles((theme) => ({
     color: theme.colors.grey[5],
     backgroundColor: theme.colors.grey[0],
 
-    '&:hover, &:hover path': {
+    '&:hover, &:hover line': {
       color: theme.colors.blue[2],
       stroke: theme.colors.blue[2],
       backgroundColor: theme.colors.grey[0],
     },
 
-    '&:active, &:active path': {
+    '&:active, &:active line': {
       color: theme.colors.blue[1],
       stroke: theme.colors.blue[1],
       backgroundColor: theme.colors.grey[0],
@@ -88,6 +88,7 @@ export const useStyles = createStyles((theme) => ({
     '&[data-hovered]': {
       '&:hover': {
         backgroundColor: theme.colors.blue[5],
+        transition: 'background-color 0.5ms',
       },
     },
 

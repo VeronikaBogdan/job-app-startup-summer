@@ -10,7 +10,7 @@ import { Filters } from '../../components/filters/filters';
 import { Layout } from '../../components/layout/layout';
 import { Loader } from '../../components/loader/loader';
 
-import { useStyles } from '../../styles/styled-index';
+import { useStyles } from './styled-main-page';
 
 export const MainPage = ({ token }) => {
   const dispatch = useDispatch();

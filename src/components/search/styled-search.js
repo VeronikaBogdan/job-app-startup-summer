@@ -22,7 +22,7 @@ export const SearchWrapper = styled.form`
   svg {
     width: 20px;
     height: 20px;
-    margin: 4px 4px 0 1px;
+    margin: 0px 4px 0 1px;
   }
 
   @media (max-width: 500px) {

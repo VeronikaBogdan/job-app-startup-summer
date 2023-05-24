@@ -67,7 +67,8 @@ export const StyledLink = styled(Link)`
   font-size: 16px;
   line-height: 20px;
   color: ${({ to, pathname }) =>
-    pathname === to || (pathname.slice(START_INDEX, FINAL_VACANCY_ID_INDEX) === VACANCY_PATH && to === '/')
+    pathname === to ||
+    (pathname.slice(START_INDEX, FINAL_VACANCY_ID_INDEX) === VACANCY_PATH && to === '/')
       ? colors.blue[1]
       : colors.grey[7]};
   background-color: ${colors.grey[0]};

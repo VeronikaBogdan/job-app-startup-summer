@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
-import { Pagination, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 
-import { COUNT, LIMIT_TOTAL } from '../../app-constants';
+import { COUNT } from '../../app-constants';
 
 import { getVacancies } from '../../store/reducers/vacancies';
-import { getAllFavorites } from '../../components/cards/card/card.helper';
 import { getTokenFromStorage } from '../../utils/token-getter';
+import { getAllFavorites } from './card/card.helper';
 
-import { Card } from '../../components/cards/card/card';
-import { EmptyState } from '../../components/empty-state/empty-state';
-import { Search } from '../../components/search/search';
+import { Card } from '../cards/card/card';
+import { EmptyState } from '../empty-state/empty-state';
+import { Search } from '../search/search';
 
 import { useStyles } from './styled-cards-list';
+import { PaginationComponent } from '../pagination/pagination';
 
 export const CardsList = ({ isSearch, filteredData, vacanciesIds }) => {
   const dispatch = useDispatch();
@@ -29,15 +30,25 @@ export const CardsList = ({ isSearch, filteredData, vacanciesIds }) => {
 
   const token = getTokenFromStorage('access_token');
   const allFavorites = getAllFavorites();
-  const vacanciesAmount = pathname === '/favorites' ? allFavorites.length : vacancies.objects?.length;
+  const vacanciesAmount =
+    pathname === '/favorites' ? allFavorites.length : vacancies.objects?.length;
 
   const handleChangeSearchFromInput = (keyword) => {
     setSearchedData(keyword);
   };
 
   useEffect(() => {
-    dispatch(getVacancies({ ...filteredData, ...searchedData, page: activePage - 1, ids: vacanciesIds, token: token }));
-  }, [filteredData, searchedData, activePage, vacanciesIds]);
+    token &&
+      dispatch(
+        getVacancies({
+          ...filteredData,
+          ...searchedData,
+          page: activePage - 1,
+          ids: vacanciesIds,
+          token: token,
+        })
+      );
+  }, [filteredData, searchedData, activePage, vacanciesIds, token, dispatch]);
 
   return (
     <>
@@ -59,14 +70,7 @@ export const CardsList = ({ isSearch, filteredData, vacanciesIds }) => {
                   />
                 </Link>
               ))}
-            <Pagination
-              classNames={{ control: classes.control }}
-              sx={classes.root}
-              value={activePage}
-              onChange={setPage}
-              total={total > LIMIT_TOTAL ? LIMIT_TOTAL : total}
-              siblings={1}
-            />
+            <PaginationComponent value={activePage} onChange={setPage} total={total} />
           </>
         ) : (
           <EmptyState />

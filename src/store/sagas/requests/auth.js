@@ -1,6 +1,14 @@
 import axios from 'axios';
 
-import { CLIENT_ID, CLIENT_SECRET, HOST, HR, LOGIN, PASSWORD, X_SECRET_KEY } from './../../../app-constants';
+import {
+  CLIENT_ID,
+  CLIENT_SECRET,
+  HOST,
+  HR,
+  LOGIN,
+  PASSWORD,
+  X_SECRET_KEY,
+} from './../../../app-constants';
 
 export const instance = axios.create({
   baseURL: HOST,

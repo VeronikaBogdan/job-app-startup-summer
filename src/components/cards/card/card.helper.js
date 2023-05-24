@@ -20,15 +20,12 @@ export const getSalaryRange = (paymentFrom, paymentTo) => {
   return `${paymentFrom} - ${paymentTo}`;
 };
 
-export const getAllFavorites = () => {
-  if (typeof window !== 'undefined' && localStorage) {
-    return Object.keys(localStorage).filter(
-      (vacancy) => vacancy.slice(START_INDEX, FINAL_VACANCY_ID_INDEX) === 'favorite'
-    );
-  }
-
-  return {};
-};
+export const getAllFavorites = () =>
+  Object.keys(localStorage).filter(
+    (vacancy) => vacancy.slice(START_INDEX, FINAL_VACANCY_ID_INDEX) === 'favorite'
+  );
 
 export const getInitialFavoriteState = (vacancyId) =>
-  Object.keys(localStorage).some((vacancy) => vacancy.slice(FINAL_VACANCY_ID_INDEX) === vacancyId.toString());
+  Object.keys(localStorage).some(
+    (vacancy) => vacancy.slice(FINAL_VACANCY_ID_INDEX) === vacancyId.toString()
+  );

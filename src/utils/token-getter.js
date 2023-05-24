@@ -1,5 +1,1 @@
-export const getTokenFromStorage = (key) => {
-  if (typeof window !== 'undefined') {
-    return localStorage.getItem(key);
-  }
-};
+export const getTokenFromStorage = (key) => localStorage.getItem(key);

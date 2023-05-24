@@ -4,7 +4,11 @@ import createSagaMiddleware from '@redux-saga/core';
 import cataloguesReducer from './reducers/catalogues';
 import vacanciesReducer from './reducers/vacancies';
 import vacancyReducer from './reducers/vacancy';
-import { watcherSagaForCatalogues, watcherSagaForVacancies, watcherSagaForVacancy } from './sagas/rootSaga';
+import {
+  watcherSagaForCatalogues,
+  watcherSagaForVacancies,
+  watcherSagaForVacancy,
+} from './sagas/rootSaga';
 
 const reducer = combineReducers({
   catalogues: cataloguesReducer,

@@ -24,7 +24,9 @@ export const FavoritesPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <Layout>{!!favorites.length ? <CardsList vacanciesIds={favorites} /> : <EmptyState />}</Layout>
+      <Layout>
+        {!!favorites.length ? <CardsList vacanciesIds={favorites} /> : <EmptyState />}
+      </Layout>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router';
 
 import { Flex, Group, Stack, Text, Title } from '@mantine/core';
 
@@ -12,14 +11,13 @@ import { getVacancies } from '../../../store/reducers/vacancies';
 import { getTokenFromStorage } from '../../../utils/token-getter';
 import { getAllFavorites, getInitialFavoriteState, getSalaryRange } from './card.helper';
 
-import { Favorite } from '../../../components/favorite/favorite';
+import { Favorite } from '../../favorite/favorite';
 
 import { useStyles } from './styled-card';
 
 export const Card = ({ id, profession, location, typeOfWork, paymentFrom, paymentTo, currency }) => {
   const dispatch = useDispatch();
   const { classes } = useStyles();
-  // const { vacancyId } = useParams();
 
   const initialFavoriteState = getInitialFavoriteState(id);
   const [isFavorite, setIsFavorite] = useState(initialFavoriteState);

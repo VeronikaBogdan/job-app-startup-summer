@@ -18,6 +18,12 @@ export const Search = ({ onChangeSearch }) => {
     onChangeSearch({ keyword: searchTitle });
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      onChangeSearch({ keyword: searchTitle });
+    }
+  };
+
   return (
     <SearchWrapper>
       <SearchIcon />
@@ -27,6 +33,7 @@ export const Search = ({ onChangeSearch }) => {
         type='search'
         value={searchTitle}
         onChange={handleSearchTitle}
+        onKeyDown={handleKeyDown}
       />
       <Button
         data-elem='search-button'
