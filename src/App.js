@@ -7,9 +7,9 @@ import { getAuth } from './store/reducers/auth';
 
 import store from './store/configureStore';
 
-import { MainPage } from './pages/main-page';
-import { VacancyPage } from './pages/vacancy-page/vacancy-page';
-import { FavoritesPage } from './pages/favorites-page';
+import { Main } from './pages/main';
+import { Vacancy } from './pages/vacancy/vacancy';
+import { Favorites } from './pages/favorites';
 
 import { theme } from './styles/theme';
 
@@ -26,9 +26,9 @@ const App = () => {
       <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         <HashRouter>
           <Routes>
-            <Route path='/' element={<MainPage token={authData} />} />
-            <Route path='/vacancy/:vacancyId' element={<VacancyPage />} />
-            <Route path='/favorites' element={<FavoritesPage />} />
+            <Route path='/' element={<Main token={authData} />} />
+            <Route path='/vacancy/:vacancyId' element={<Vacancy />} />
+            <Route path='/favorites' element={<Favorites />} />
           </Routes>
         </HashRouter>
       </MantineProvider>

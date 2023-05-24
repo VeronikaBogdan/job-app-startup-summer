@@ -10,9 +10,9 @@ import { Filters } from '../../components/filters/filters';
 import { Layout } from '../../components/layout/layout';
 import { Loader } from '../../components/loader/loader';
 
-import { useStyles } from './styled-main-page';
+import { useStyles } from './styled-main';
 
-export const MainPage = ({ token }) => {
+export const Main = ({ token }) => {
   const dispatch = useDispatch();
   const { classes } = useStyles();
   const [filteredData, setFilteredData] = useState({});
