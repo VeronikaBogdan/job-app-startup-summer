@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { CardsList } from '@/components/cards/cards-list';
-import { EmptyState } from '@/components/empty-state/empty-state';
-import { Layout } from '@/components/layout/layout';
-import { Loader } from '@/components/loader/loader';
+import { CardsList } from '../../components/cards/cards-list';
+import { EmptyState } from '../../components/empty-state/empty-state';
+import { Layout } from '../../components/layout/layout';
+import { Loader } from '../../components/loader/loader';
 
-import { getAllFavorites } from '@/components/cards/card/card.helper';
+import { getAllFavorites } from '../../components/cards/card/card.helper';
 
 export const FavoritesPage = () => {
   const [favorites, setFavorites] = useState([]);

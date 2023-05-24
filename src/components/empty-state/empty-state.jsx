@@ -16,7 +16,7 @@ export const EmptyState = () => {
         Упс, здесь еще ничего нет!
       </Title>
       {pathname === '/favorites' && (
-        <Button component={Link} href='/' variant='light' className={classes.button}>
+        <Button component={Link} to='/' variant='light' className={classes.button}>
           Поиск Вакансий
         </Button>
       )}

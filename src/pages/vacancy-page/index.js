@@ -1,1 +1,1 @@
-export { VacancyPage } from '@/pages/vacancy-page';
+export { VacancyPage } from './vacancy-page';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 import { Flex, Group, Stack, Text, Title } from '@mantine/core';
 
@@ -15,17 +16,17 @@ import { Favorite } from '../../../components/favorite/favorite';
 
 import { useStyles } from './styled-card';
 
-export const Card = ({ vacancyId, profession, location, typeOfWork, paymentFrom, paymentTo, currency }) => {
+export const Card = ({ id, profession, location, typeOfWork, paymentFrom, paymentTo, currency }) => {
   const dispatch = useDispatch();
   const { classes } = useStyles();
+  // const { vacancyId } = useParams();
 
-  const initialFavoriteState = getInitialFavoriteState(vacancyId);
+  const initialFavoriteState = getInitialFavoriteState(id);
   const [isFavorite, setIsFavorite] = useState(initialFavoriteState);
 
   const { pathname } = useLocation();
 
-  const isVacancyPage = pathname === '/vacancy/';
-  // const isVacancyPage = pathname === '/vacancy/';
+  const isVacancyPage = pathname === `/vacancy/${id}`;
 
   const salaryRange = getSalaryRange(paymentFrom, paymentTo);
   const token = getTokenFromStorage('access_token');
@@ -37,31 +38,23 @@ export const Card = ({ vacancyId, profession, location, typeOfWork, paymentFrom,
 
   const addToFavorites = (event) => {
     toggleButton(event);
-    localStorage.setItem(`favorite${vacancyId}`, vacancyId);
+    localStorage.setItem(`favorite${id}`, id);
   };
 
   const removeFromFavorites = (event) => {
     toggleButton(event);
-    localStorage.removeItem(`favorite${vacancyId}`);
+    localStorage.removeItem(`favorite${id}`);
 
     token && dispatch(getVacancies({ ids: getAllFavorites(), token: token }));
   };
 
   return (
-    <Stack
-      data-elem={`vacancy-${vacancyId}`}
-      className={isVacancyPage ? classes.vacancyCard : classes.card}
-      spacing={11}
-    >
+    <Stack data-elem={`vacancy-${id}`} className={isVacancyPage ? classes.vacancyCard : classes.card} spacing={11}>
       <Flex justify='space-between'>
         <Title order={3} className={isVacancyPage ? classes.vacancyProfessionTitle : classes.professionTitle}>
           {profession}
         </Title>
-        <Favorite
-          vacancyId={vacancyId}
-          isFavorite={isFavorite}
-          onClick={isFavorite ? removeFromFavorites : addToFavorites}
-        />
+        <Favorite id={id} isFavorite={isFavorite} onClick={isFavorite ? removeFromFavorites : addToFavorites} />
       </Flex>
       <Group className={classes.infoGroup}>
         <Text className={isVacancyPage ? classes.vacancyPaymentText : classes.paymentText}>

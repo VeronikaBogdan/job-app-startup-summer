@@ -42,25 +42,11 @@ export const MainPage = ({ token }) => {
             <CardsList isSearch filteredData={filteredData} />
           </Grid.Col>
           <Grid.Col span={24} className={classes.mobileScreen}>
-            3{/* <Filters onChangeFilteredData={handleChangeFilteredData} /> */}
+            <Filters onChangeFilteredData={handleChangeFilteredData} />
             {/* <CardsList isSearch filteredData={filteredData} /> */}
           </Grid.Col>
         </Grid>
       </Layout>
-      {/* <Layout>
-        <Grid columns={24} className={classes.wrapper}>
-          <Grid.Col span={7} className={classes.desktopScreen}>
-            <Filters onChangeFilteredData={handleChangeFilteredData} />
-          </Grid.Col>
-          <Grid.Col span={17} className={classes.desktopScreen}>
-            <CardsList isSearch filteredData={filteredData} />
-          </Grid.Col>
-          <Grid.Col span={24} className={classes.mobileScreen}>
-            <Filters onChangeFilteredData={handleChangeFilteredData} />
-            <CardsList isSearch filteredData={filteredData} />
-          </Grid.Col>
-        </Grid>
-      </Layout> */}
     </>
   );
 };

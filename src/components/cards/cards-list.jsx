@@ -49,7 +49,7 @@ export const CardsList = ({ isSearch, filteredData, vacanciesIds }) => {
               vacancies.objects?.map((vacancy) => (
                 <Link to={`/vacancy/${vacancy.id}`} key={vacancy.id}>
                   <Card
-                    vacancyId={vacancy.id}
+                    id={vacancy.id}
                     profession={vacancy.profession}
                     location={vacancy.town?.title}
                     typeOfWork={vacancy.type_of_work?.title}

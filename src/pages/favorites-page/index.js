@@ -1,1 +1,1 @@
-export { FavoritesPage } from '@/pages/favorites-page/favorites-page';
+export { FavoritesPage } from './favorites-page';
