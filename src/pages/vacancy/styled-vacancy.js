@@ -16,7 +16,7 @@ export const useStyles = createStyles((theme) => ({
     marginLeft: '-14px',
     marginTop: '2px',
 
-    'p b': {
+    'p > b': {
       fontWeight: '700',
       fontSize: '20px',
       lineHeight: '20px',
@@ -30,11 +30,15 @@ export const useStyles = createStyles((theme) => ({
     },
     p: {
       marginBottom: '14px',
+      fontWeight: '700',
     },
 
     [`@media (max-width: 768px)`]: {
-      fontWeight: '700',
       margin: 0,
+
+      'ul, ol': {
+        paddingLeft: '18px',
+      },
     },
   },
 }));

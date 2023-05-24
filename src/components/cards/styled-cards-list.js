@@ -12,7 +12,7 @@ export const useStyles = createStyles((theme) => ({
     flex: 1,
 
     [`@media (max-width: 900px)`]: {
-      paddingLeft: 0,
+      padding: 0,
     },
   },
 }));

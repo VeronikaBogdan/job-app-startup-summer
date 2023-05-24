@@ -17,6 +17,7 @@ export const useStyles = createStyles((theme) => ({
   root: {
     justifyContent: 'center',
     marginTop: '29px',
+    marginBottom: '30px',
 
     [`@media (max-width: 500px)`]: {
       marginTop: '10px',
