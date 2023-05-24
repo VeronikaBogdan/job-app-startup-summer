@@ -39,7 +39,7 @@ export const MainPage = ({ token }) => {
             <Filters onChangeFilteredData={handleChangeFilteredData} />
           </Grid.Col>
           <Grid.Col span={17} className={classes.desktopScreen}>
-            2{/* <CardsList isSearch filteredData={filteredData} /> */}
+            <CardsList isSearch filteredData={filteredData} />
           </Grid.Col>
           <Grid.Col span={24} className={classes.mobileScreen}>
             3{/* <Filters onChangeFilteredData={handleChangeFilteredData} /> */}

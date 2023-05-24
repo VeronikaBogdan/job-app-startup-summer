@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 import { Flex, Group, Stack, Text, Title } from '@mantine/core';
 
-import Images from '../../../assets/svg/index';
+import { ReactComponent as Location } from '../../../assets/svg/location.svg';
+import { ReactComponent as Point } from '../../../assets/svg/point.svg';
 
 import { getVacancies } from '../../../store/reducers/vacancies';
 import { getTokenFromStorage } from '../../../utils/token-getter';
@@ -66,11 +67,11 @@ export const Card = ({ vacancyId, profession, location, typeOfWork, paymentFrom,
         <Text className={isVacancyPage ? classes.vacancyPaymentText : classes.paymentText}>
           з/п {salaryRange} {currency}
         </Text>
-        <Images.Point />
+        <Point />
         <Text className={isVacancyPage ? classes.vacancyWorkText : classes.workText}>{typeOfWork}</Text>
       </Group>
       <Flex className={classes.locationWrapper}>
-        <Images.Location />
+        <Location />
         <Text className={isVacancyPage ? classes.vacancyLocationText : classes.locationText}>{location}</Text>
       </Flex>
     </Stack>

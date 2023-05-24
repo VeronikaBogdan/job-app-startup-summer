@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActionIcon } from '@mantine/core';
 
-import Images from '../../assets/svg/index';
+import { ReactComponent as Star } from '../../assets/svg/star.svg';
 
 import { useStyles } from './styled-favorite';
 
@@ -15,7 +15,7 @@ export const Favorite = ({ isFavorite, vacancyId, onClick }) => {
       variant='transparent'
       onClick={onClick}
     >
-      <Images.Star />
+      <Star />
     </ActionIcon>
   );
 };

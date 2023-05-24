@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Button, Stack, Title } from '@mantine/core';
 
-import Images from '../../assets/svg/index';
+import { ReactComponent as NoVacancies } from '../../assets/svg/no-vacancies.svg';
 
 import { useStyles } from './styled-empty-state';
 
@@ -11,7 +11,7 @@ export const EmptyState = () => {
 
   return (
     <Stack spacing={32} className={classes.wrapper}>
-      <Images.NoVacancies />
+      <NoVacancies />
       <Title order={3} className={classes.message}>
         Упс, здесь еще ничего нет!
       </Title>

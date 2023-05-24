@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@mantine/core';
 
-import Images from '../../assets/svg/index';
+import { ReactComponent as SearchIcon } from '../../assets/svg/search.svg';
 
 import { useStyles } from '../filters/styled-filters';
 import { SearchInput, SearchWrapper } from './styled-search';
@@ -20,7 +20,7 @@ export const Search = ({ onChangeSearch }) => {
 
   return (
     <SearchWrapper>
-      <Images.Search />
+      <SearchIcon />
       <SearchInput
         data-elem='search-input'
         placeholder='Введите название вакансии'

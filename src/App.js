@@ -12,7 +12,13 @@ export default function App() {
       <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         <HashRouter>
           <Routes>
-            <Route path='/' element={<MainPage token='12345' />} />
+            <Route
+              path='/'
+              element={
+                // <MainPage token='123' />
+                <MainPage token='v3.r.137440105.fe7baafcc2d4de0346fbbe3092a1551b0762f381.3e541eed0d4cc5a82ba45c1d0a75623ca69d354b' />
+              }
+            />
           </Routes>
         </HashRouter>
       </MantineProvider>

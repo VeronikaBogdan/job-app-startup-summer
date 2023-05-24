@@ -47,7 +47,7 @@ export const CardsList = ({ isSearch, filteredData, vacanciesIds }) => {
           <>
             {!loading &&
               vacancies.objects?.map((vacancy) => (
-                <Link href={`/vacancy/${vacancy.id}`} key={vacancy.id}>
+                <Link to={`/vacancy/${vacancy.id}`} key={vacancy.id}>
                   <Card
                     vacancyId={vacancy.id}
                     profession={vacancy.profession}
