@@ -65,7 +65,7 @@ export const Filters = ({ onChangeFilteredData }) => {
           </Button>
         </Group>
         <Select
-          data-elem='industry-select'
+          data-elem={window.innerWidth > 900 ? 'industry-select' : 'industry-select'}
           classNames={{
             ...classNames,
             item: classes.input,

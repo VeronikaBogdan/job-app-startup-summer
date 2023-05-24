@@ -7,9 +7,17 @@ export const useStyles = createStyles((theme) => ({
     border: `1px solid ${theme.colors.grey[3]}`,
     borderRadius: '12px',
     marginBottom: '10px',
+    width: '315px',
+    height: '362px',
 
-    form: {
+    [`@media (max-width: 1060px)`]: {
+      height: '342px',
+      width: '290px',
+    },
+
+    [`@media (max-width: 900px)`]: {
       width: '100%',
+      height: '352px',
     },
   },
   formTitle: {
@@ -197,6 +205,7 @@ export const useStyles = createStyles((theme) => ({
   searchButton: {
     height: '32px',
     borderRadius: '8px',
+    marginRight: '2px',
 
     '&:hover': {
       backgroundColor: theme.colors.blue[2],

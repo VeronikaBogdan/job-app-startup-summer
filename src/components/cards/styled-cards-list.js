@@ -8,7 +8,8 @@ export const useStyles = createStyles((theme) => ({
     paddingRight: '14px',
   },
   content: {
-    padding: '2px 0 0 13px',
+    padding: '2px 14px 0 27px',
+    flex: 1,
 
     [`@media (max-width: 900px)`]: {
       paddingLeft: 0,
