@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { colors } from '../../styles/theme';
 import { Container } from '../layout/styled-layout';
+import { FINAL_VACANCY_ID_INDEX, START_INDEX, VACANCY_PATH } from '../../app-constants';
 
 export const StyledHeader = styled.header`
   background-color: ${colors.grey[0]};
@@ -66,7 +67,9 @@ export const StyledLink = styled(Link)`
   font-size: 16px;
   line-height: 20px;
   color: ${({ to, pathname }) =>
-    pathname === to || (pathname === '/vacancy/[id]' && to === '/') ? colors.blue[1] : colors.grey[7]};
+    pathname === to || (pathname.slice(START_INDEX, FINAL_VACANCY_ID_INDEX) === VACANCY_PATH && to === '/')
+      ? colors.blue[1]
+      : colors.grey[7]};
   background-color: ${colors.grey[0]};
 
   &:hover {

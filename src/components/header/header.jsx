@@ -8,8 +8,8 @@ import { ReactComponent as Logo } from '../../assets/svg/logo.svg';
 import { HeaderContainer, Links, LogoLink, StyledHeader, StyledLink } from './styled-header';
 
 export const Header = () => {
-  const { pathname } = useLocation();
   const [opened, { toggle }] = useDisclosure(false);
+  const { pathname } = useLocation();
 
   return (
     <StyledHeader>

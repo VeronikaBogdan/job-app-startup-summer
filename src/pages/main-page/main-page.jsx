@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Grid, Title } from '@mantine/core';
+import { Grid } from '@mantine/core';
 
 import { getCatalogues } from '../../store/reducers/catalogues';
 import { getVacancies } from '../../store/reducers/vacancies';
@@ -43,7 +43,7 @@ export const MainPage = ({ token }) => {
           </Grid.Col>
           <Grid.Col span={24} className={classes.mobileScreen}>
             <Filters onChangeFilteredData={handleChangeFilteredData} />
-            {/* <CardsList isSearch filteredData={filteredData} /> */}
+            <CardsList isSearch filteredData={filteredData} />
           </Grid.Col>
         </Grid>
       </Layout>
